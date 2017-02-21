@@ -1,0 +1,23 @@
+<h2> Your shipping address is {{order.shipping.address1}} </h2>
+<h2>You have {{order.numberItems}} items</h2>
+<h2>Your order is ${{order.subtotal}} dollars</h2>
+
+<h3>Your order details</h3>
+<table class="table">
+    <tr>
+        <td><b>Product</b></td>
+        <td><b>Price</b></td>
+        <td colspan="2"><b>Quantity</b></td>
+    </tr>
+{{#each order.order}}
+    <tr>
+        <td><img src= "{{imageUri}}" style="width:60%; max-width:200px; border:solid 1px #eee;"></td>
+        <td><p>{{price}}</p></td>
+        <td>{{description}}</td>
+        <!-- <td><p>insert quantity here</p></td> -->
+            
+    </tr>
+{{/each}}
+</table>
+
+<!-- recap order, thank you, where it will be sent, how many items, total amount, when to expect order -->

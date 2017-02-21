@@ -1,0 +1,42 @@
+<h1>Shopping cart</h1>
+<h3>Your cart contains {{count}} items:</h3>
+<table class="table">
+    <tr>
+        <td><b>Product</b></td>
+        <td><b>Price</b></td>
+        <td colspan="2"><b>Quantity</b></td>
+    </tr>
+{{#each cart}}
+    <tr>
+        <td><img src= "{{imageUri}}" style="width:60%;max-width:200px;border:solid 1px #eee;"></td>
+        <td><p>{{price}}</p></td>
+        <td>{{description}}</td>
+        <!-- <td><p>insert quantity here</p></td> -->
+        <td><a href="/cart/delete/{{_id}}" class="btn btn-danger">Remove</a>
+            
+    </tr>
+{{/each}}
+</table>
+<!-- <h3>Total: {{total}}</h3> -->
+<form method = "POST">
+  <button type = "submit" class="btn btn-danger">Purchase</button>
+</form>
+  <p>
+      <a href="/cart/delete" class="btn btn-danger">Empty Cart</a>
+  </p>
+
+<p>
+    <a href="/products" class="btn btn-default">Back</a>
+</p>
+<!-- {{#each products}}
+  
+    <div class= "mycard" style = "width: 200px; border:solid 1px #eee">
+      <img src={{imageUri}} alt="Card image cap" style="width:80%;max-width:200px;border:solid 1px #eee;">
+      <div>
+      <a href="/cart/add/{{_id}}" class="btn btn-primary">Add to cart</a>
+        <p>{{title}}</p>
+        <p>{{description}}</p>
+      </div>
+    </div>
+
+{{/each}} -->
